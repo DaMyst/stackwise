@@ -31,6 +31,7 @@ export default async function buildOrUpdateStack(
     inputString,
     briefSkeleton,
     functionAndOutputSkeleton,
+    inputValues
   } = await buildStack({
     inputJSON: inputJSON,
     outputJSON: outputJSON,
@@ -109,10 +110,10 @@ export default async function buildOrUpdateStack(
   } else {
     console.log(`function already exists`);
   }
+  console.log(`inputString in buildOrUpdateStack:`, inputString);
 
-  const inputStringToArgument = extractInputString(stackSnippet);
   const injectedFunction = `${methodName}(
-  ${inputStringToArgument}
+  ${inputValues}
   )`;
 
   console.log(`stackSnippet in buildOrUpdateStack:`, stackSnippet);

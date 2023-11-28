@@ -3,6 +3,7 @@ import { extractJSONPlaceholders } from './extractJSONPlaceholders';
 import { extractSecondArgument } from './extractSecondArgument';
 import { resilientJSONParse } from './resilientJSONParse';
 
+
 export default function extractInputString(inputString) {
   // Early termination if the input is a simple string
 
